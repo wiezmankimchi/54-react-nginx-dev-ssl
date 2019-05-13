@@ -1,4 +1,4 @@
-# react-env
+# docker + nginx + react
 Setting up a (docker + nginx + react) development environment
 
 ## Getting Started
