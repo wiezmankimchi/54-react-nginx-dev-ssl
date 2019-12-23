@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Set the TLD domain we want to use
-BASE_DOMAIN="mxlinux.local"
+BASE_DOMAIN=$DEV_DOMAIN
 
 # Days for the cert to live
 DAYS=1095
 
 # A blank passphrase
-PASSPHRASE="TELaviv1967"
+PASSPHRASE=$PASS
 
 # Generated configuration file
 CONFIG_FILE="config.txt"

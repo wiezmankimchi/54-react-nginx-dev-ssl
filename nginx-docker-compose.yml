@@ -1,0 +1,16 @@
+version: '3'
+services:
+  nginx:
+    build: 
+      dockerfile: ./docker/nginx.dockerfile
+      context: .
+    image: wiezmankimchi/nginx
+    container_name: 54-nginx
+    ports: 
+      - "3080:80"
+      - "443:443"
+    environment:
+      - DEV_DOMAIN=mxlinux.local
+      - PASS=TELaviv1967  
+    networks: 
+      - app-network

@@ -2,9 +2,8 @@ FROM nginx:alpine
 MAINTAINER Wiezman Kimchi
 
 ARG DEV_DOMAIN
-ARG NGINX_SSL
 ENV DEV_DOMAIN $DEV_DOMAIN
-ENV NGINX_SSL $NGINX_SSL
+
 
 RUN apk update && apk add \
     openssl \
