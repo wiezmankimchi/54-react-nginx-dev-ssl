@@ -1,5 +1,19 @@
-FROM nginx:latest
-MAINTAINER Rômulo Freires
+FROM nginx:alpine
+MAINTAINER Wiezman Kimchi
+
+ARG DEV_DOMAIN
+ARG NGINX_SSL
+ENV DEV_DOMAIN $DEV_DOMAIN
+ENV NGINX_SSL $NGINX_SSL
+
+RUN apk update && apk add \
+    openssl \
+    bash
+
+COPY /docker/generate-ssl.sh /etc/nginx/generate-ssl.sh
+RUN chmod +x /etc/nginx/generate-ssl.sh
+RUN cd /etc/nginx && ./generate-ssl.sh
+
 COPY /public /var/www/public
 COPY /docker/config/nginx.conf /etc/nginx/nginx.conf
 RUN chmod 755 -R /var/www/public

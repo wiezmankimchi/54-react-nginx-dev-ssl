@@ -1,9 +1,10 @@
-# docker + nginx + react
-Setting up a (docker + nginx + react) development environment
+# 54-react-nginx-dev-ssl
+Setting up a (docker + nginx + react + ssl) development environment
 
 ## Getting Started
 
 You just need docker and docker-compose installed on you system.
+Update the files with the domain and the password for the ssl certificate
 
 After this ...
 

@@ -1,5 +1,5 @@
 FROM node:latest
-MAINTAINER Rômulo Freires
+MAINTAINER Wiezman Kimchi
 ENV NODE_ENV=development
 COPY . /var/www
 WORKDIR /var/www

@@ -4,10 +4,11 @@ services:
     build: 
       dockerfile: ./docker/nginx.dockerfile
       context: .
-    image: romulofreires1/nginx
-    container_name: nginx
+    image: wiezmankimchi/nginx
+    container_name: 54-nginx
     ports: 
-      - "80:80"
+      - "3080:80"
+      - "443:443"
     networks: 
       - app-network
     depends_on:
@@ -16,10 +17,10 @@ services:
     build:
         dockerfile: ./docker/app.dockerfile
         context: .
-    image: romulofreires1/node
-    container_name: app
+    image: wiezmankimchi/node
+    container_name: 54-app
     ports:
-      - "3000:3000"
+      - "3054:3000"
     volumes:
       - ./:/var/www
       - /var/www/node_modules
