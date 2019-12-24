@@ -9,7 +9,10 @@ RUN apk update && apk add \
     openssl \
     bash
 
+
 COPY /docker/generate-ssl.sh /etc/nginx/generate-ssl.sh
+COPY /docker/config.conf /etc/nginx/config.conf
+
 RUN chmod +x /etc/nginx/generate-ssl.sh
 RUN cd /etc/nginx && ./generate-ssl.sh
 

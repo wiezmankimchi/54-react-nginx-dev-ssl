@@ -5,12 +5,10 @@ services:
       dockerfile: ./docker/nginx.dockerfile
       context: .
     image: wiezmankimchi/nginx
-    container_name: 54-nginx
+    container_name: 54-nginx-test
     ports: 
       - "3080:80"
       - "443:443"
     environment:
       - DEV_DOMAIN=mxlinux.local
       - PASS=TELaviv1967  
-    networks: 
-      - app-network

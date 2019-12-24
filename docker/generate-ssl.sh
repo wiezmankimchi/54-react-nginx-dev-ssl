@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+source /etc/nginx/config.conf
+echo $DEV_DOMAIN
+echo $PASS
+
 # Set the TLD domain we want to use
 BASE_DOMAIN=$DEV_DOMAIN
 
@@ -57,3 +61,7 @@ openssl x509 -noout -fingerprint -text < "$FILE_NAME.crt" > "$FILE_NAME.info"
 
 # Protect the key
 chmod 400 "$FILE_NAME.key"
+
+# REMOVE CONFIG FILES
+echo "removing configuration files"
+rm /etc/nginx/config.conf
